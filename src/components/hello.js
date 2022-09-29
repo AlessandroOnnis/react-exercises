@@ -4,7 +4,11 @@ export class Hello extends React.Component {
     render() {
         return <>
                 <h1>Hello, world!</h1>
-                <p>What a beautiful day!</p>
+                <Message />
                </>
     }
+}
+
+function Message(){
+    return <p>What a beautiful day!</p>
 }
