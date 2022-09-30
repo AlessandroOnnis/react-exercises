@@ -3,8 +3,8 @@ import React from "react"
 //===Esecuzione esercizio===setting default value
 export class Welcome extends React.Component{
     render(){
-        const maggiorenne = this.props.age > 18;
-        if(this.props.age && maggiorenne){
+        const ageRange = this.props.age > 18 && this.props.age <65;
+        if(this.props.age && ageRange){
             return (
             <>
                 <p>Welcome, {<strong>{this.props.name?this.props.name: 'nome di default'}</strong>}!</p>
