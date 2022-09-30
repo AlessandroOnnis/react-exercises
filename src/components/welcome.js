@@ -4,7 +4,7 @@ import React from "react"
 export class Welcome extends React.Component{
     render(){
         const maggiorenne = this.props.age > 18;
-        if(maggiorenne){
+        if(this.props.age && maggiorenne){
             return (
             <>
                 <p>Welcome, {<strong>{this.props.name?this.props.name: 'nome di default'}</strong>}!</p>
