@@ -4,7 +4,7 @@ import React from "react"
 export class Welcome extends React.Component{
     render(){
         const maggiorenne = this.props.age > 18;
-        if(this.props.age && maggiorenne){
+        if(maggiorenne){
             return (
             <>
                 <p>Welcome, {<strong>{this.props.name?this.props.name: 'nome di default'}</strong>}!</p>
@@ -20,6 +20,9 @@ export class Welcome extends React.Component{
         }
     }
 }
+//per me sarebbe più corretto così, controllare sull'elemento se esiste, poi passare i controlli sull'altro
 function Age(props) {
-    return <p>Your age is, {props.age}</p>
+    if(props.age){
+        return <p>Your age is, {props.age}</p>
+    }
 }
