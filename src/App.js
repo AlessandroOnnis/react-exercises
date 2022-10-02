@@ -1,6 +1,5 @@
 import React from 'react';
 import { Counter } from './components/counter';
-import { Counter2 } from './components/counter';
 import { Hello } from './components/hello';
 import { Welcome } from './components/welcome';
 const user = 'Jhon'
