@@ -11,7 +11,7 @@ class App extends React.Component {
     <div>
       <Hello/>
       <Welcome name={user} age={20}/>
-      <Counter />
+      <Counter start={0} timing={1000} add={1}/>
     </div>
     )
   };

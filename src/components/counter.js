@@ -3,11 +3,11 @@ import React from "react";
 export class Counter extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {seconds: 0}
+        this.state = {seconds: this.props.start}
         
         setInterval(()=>{
-            this.setState({seconds: this.state.seconds + 1}) 
-        }, 1000);
+            this.setState({seconds: this.state.seconds + this.props.add}) 
+        }, this.props.timing);
     }
 
     render() {
