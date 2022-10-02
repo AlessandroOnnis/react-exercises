@@ -11,6 +11,13 @@ export class Counter extends React.Component {
     }
 
     render() {
-        return <h1>{this.state.seconds}</h1>
+        return (
+            <>
+                <CounterDisplay state={this.state.seconds}/>
+            </>
+        )
     }
+}
+function CounterDisplay(props){
+    return <h1>{props.state}</h1>
 }
