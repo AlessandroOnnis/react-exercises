@@ -3,7 +3,7 @@ import React from "react"
 //===Esecuzione esercizio===setting default value
 export class Welcome extends React.Component{
     render(){
-        const ageRange = this.props.age > 18 && this.props.age <65 ||  this.props.age < 65;
+        const ageRange = (this.props.age > 18 && this.props.age <65) ||  this.props.age < 65;
         const person = this.props.name === 'Jhon';
         let age;
         if(this.props.age && ageRange && person){
