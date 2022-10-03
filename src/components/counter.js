@@ -6,11 +6,15 @@ export class Counter extends React.Component {
         this.state = {seconds: this.props.start}
     }
     componentDidMount(){
-        setInterval(()=>{
-            this.setState({seconds: this.state.seconds + this.props.add}) 
+        this._interval = setInterval(()=>{
+            this.setState({seconds: this.state.seconds + this.props.add }) 
             }, this.props.timing);
         }
-
+    componentWillUnmount(){
+        if(this._interval){
+            clearInterval(this._interval)
+        }
+    }
     render() {
         return (
             <>
