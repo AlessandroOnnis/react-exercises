@@ -15,6 +15,11 @@ export class Counter extends React.Component {
             clearInterval(this._interval)
         }
     }
+    componentDidUpdate(prevProps, prevState){
+        if(this.state.seconds > 10){
+            this.setState({seconds: this.props.start})
+        }
+    }
     render() {
         return (
             <>
