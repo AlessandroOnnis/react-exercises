@@ -5,6 +5,9 @@ export class Counter extends React.Component {
         super(props)
         this.state = {seconds: this.props.start}
     }
+    // userInteraction = ((ev)=>{
+    //     this.setState({seconds: this.state.seconds + this.props.add})
+    // })
     componentDidMount(){
         this._interval = setInterval(()=>{
             this.setState({seconds: this.state.seconds + this.props.add }) 
@@ -24,6 +27,7 @@ export class Counter extends React.Component {
         return (
             <>
                 <CounterDisplay state={this.state.seconds}/>
+                {/* <button onClick={this.userInteraction}>Plus</button> */}
             </>
         )
     }
