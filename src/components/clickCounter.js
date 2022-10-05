@@ -13,8 +13,12 @@ export class ClickCounter extends React.Component {
         return (
             <div>
                 <h2>Count : {this.state.amount}</h2>
-                <button onClick={this.userInteraction}>Plus</button>
+                <CounterButton add={this.userInteraction}/>
             </div>
         );
     }
+}
+
+function CounterButton(props){
+    return <button onClick={props.add}>Plus</button>
 }
