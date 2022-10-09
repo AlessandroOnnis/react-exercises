@@ -11,7 +11,7 @@ export class Welcome extends React.Component{
         }
         return (
         <>
-            <p>Welcome, {<strong>{this.props.name?this.props.name: 'nome di default'}</strong>}!</p>
+            <p>Welcome, {<strong>{this.props.name?this.props.name: 'user, type your name'}</strong>}!</p>
             {age}
         </>
         )
