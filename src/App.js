@@ -5,7 +5,6 @@ import { Counter } from './components/counter';
 import { Hello } from './components/hello';
 import { InteractiveWelcome } from './components/interactiveWelcome';
 import { Login } from './components/login';
-// const user = 'Jhon'
 
 class App extends React.Component {
   render() {
