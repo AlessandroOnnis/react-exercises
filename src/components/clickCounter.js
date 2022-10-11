@@ -1,4 +1,5 @@
 import React from "react";
+import { CounterButton } from "./counterButton";
 
 export class ClickCounter extends React.Component {
     constructor(props) {
@@ -17,8 +18,4 @@ export class ClickCounter extends React.Component {
             </div>
         );
     }
-}
-
-function CounterButton(props){
-    return <button onClick={props.add}>Plus</button>
 }
