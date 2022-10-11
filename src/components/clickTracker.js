@@ -1,4 +1,5 @@
 import React from "react";
+import { CounterButton } from "./counterButton";
 
 export class ClickTracker extends React.Component{
     constructor(props){
@@ -18,15 +19,11 @@ export class ClickTracker extends React.Component{
             <>
             {
                 buttons.map((item) => (
-                    <MyButton key={item.nome} name={item.nome} track={this.track}/>
+                    <CounterButton key={item.nome} name={item.nome} evento={this.track}/>
                 ))
             }
                 <h1>{this.state.contenuto}</h1>
             </>
         )
     }
-}
-
-function MyButton(props){
-    return <button onClick={props.track}>{props.name}</button>
 }
