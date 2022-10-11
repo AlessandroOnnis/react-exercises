@@ -1,29 +1,13 @@
 import React from "react"
+import { Age } from "./age"
 
-//===Esecuzione esercizio===setting default value
-export class Welcome extends React.Component{
-    render(){
-        const ageRange = (this.props.age > 18 && this.props.age <65) ||  this.props.age < 65;
-        const person = this.props.name === 'Jhon';
-        let age;
-        if(this.props.age && ageRange && person){
-            age = <Age age={this.props.age}/>
-        }
+export class Welcome extends React.Component {
+    render() {
         return (
-        <>
-            <p>Welcome, {<strong>{this.props.name?this.props.name: 'user, type your name'}</strong>}!</p>
-            {age}
-        </>
+            <>
+                <p>Welcome, <strong>{this.props.name ? this.props.name : 'nome di default'}</strong>!</p>
+                {this.props.age <= 65 && this.props.name === 'John' && <Age age={this.props.age} />}
+            </>
         )
     }
-}
-function Age(props) {
-    let ok = props.age >= 18;
-        if(ok){
-            let message = "Your age is,"
-            return <>{message} {props.age}</>
-        }if(!ok){
-            let message = "You're to young"
-            return <>{message}</>
-        }
 }
