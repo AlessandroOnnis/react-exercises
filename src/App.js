@@ -1,16 +1,15 @@
 import React from 'react';
-import { ClickCounter } from './components/clickCounter';
-import { Counter } from './components/counter';
 import { Hello } from './components/hello';
 import { Welcome } from './components/welcome';
-const user = 'Jhon'
+import { Counter } from './components/counter';
+import { ClickCounter } from './components/clickCounter';
 
 class App extends React.Component {
   render() {
     return (
     <div>
       <Hello/>
-      <Welcome name={user} age={20}/>
+      <Welcome name={'John'} age={18}/>
       <Counter start={0} timing={1000} add={1}/>
       <ClickCounter />
     </div>

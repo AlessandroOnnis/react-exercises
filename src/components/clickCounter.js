@@ -5,7 +5,7 @@ export class ClickCounter extends React.Component {
         super(props)
         this.state = {amount: 0}
     }
-    userInteraction = ((ev)=>{
+    userInteraction = (()=>{
         this.setState({amount: this.state.amount + 1})
     })
 
