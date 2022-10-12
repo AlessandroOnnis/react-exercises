@@ -1,4 +1,5 @@
 import React from "react";
+import { GeneralButton } from "./generalButton";
 
 export class Login extends React.Component {
     state = {
@@ -9,38 +10,26 @@ export class Login extends React.Component {
     }
     info = (e) => {
         let userValue = e.target.value;
-        let name = e.target.name
-        let type = e.target.type
-        let checked = e.target.checked
+        let userName = e.target.name
+        let userType = e.target.type
+        let userChecked = e.target.checked
         this.setState({
-            [name]: type === 'checkbox' ? checked : userValue
+            [userName]: userType === 'checkbox' ? userChecked : userValue
         })
         this.setState((state)=>{
             return {disabled: !this.state.username || !this.state.password}
         })
     }
-    onLog = (state)=>{
-        onLogin(this.state)
-    }
+    onLogin= ()=>{ this.props.onLogin(this.state) }
 
     render() {
         return (
-            <>
+            <div>
                 <input name='username' value={this.state.username} onChange={this.info} />
                 <input name='password' type='password' value={this.state.password} onChange={this.info} />
                 <input name='checkbox' type='checkbox' checked={this.state.checkbox} onChange={this.info} />
-                <button name="login" type="button" onClick={this.onLog} disabled={this.state.disabled}>login</button>
-            </>
+                <GeneralButton name="login" type="button" evento={this.onLogin} disabled={this.state.disabled}/>
+            </div>
         )
     }
-}
-
-function onLogin(props) {
-    let stato = {
-        name: props.username,
-        password: props.password,
-        checkbox: props.checkbox
-    }
-    
-    console.log(stato)
 }
