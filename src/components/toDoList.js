@@ -20,16 +20,25 @@ export class TodoList extends React.Component{
         this.setState({newItem: userInput})
         this.state.items.push(this.state.newItem)
         this._todoRef.current.value = null
-
     })
+
+    clearList = () => {
+        this.setState({
+            items:[]
+        })
+    } 
 
     render(){
 
         return(
             <>
-            <ul>{this.state.items.map((item) => <li key={[item]}>{item}</li>)}</ul>
+            <div>
+                <h3>Your todo list</h3>
+                <GeneralButton evento={this.addList} name={'Add something'}/>
+                <GeneralButton evento={this.clearList} name={'Clear List'}/>
+            </div>
             <input ref={this._todoRef} type={'text'} onChange={this.userInput}></input>
-            <GeneralButton evento={this.addList} name={'Add something'}/>
+            <ul>{this.state.items.map((item) => <li key={[item]}>{item}</li>)}</ul>
             </>
         )
     }
