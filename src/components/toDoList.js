@@ -10,16 +10,17 @@ export class TodoList extends React.Component{
     }
     userInput = () =>{
         this.setState({
-            newItem: this._todoRef.current.value
+            newItem: this._todoRef.current.value,
         })
-
     }
+
     addList = (() => {
         const userInput = this._todoRef.current.value
-        if(userInput !== ''){
-            this.setState({newItem: userInput})
-            this.state.items.push(this.state.newItem)
-        }
+        if(userInput === '')return
+        this.setState({newItem: userInput})
+        this.state.items.push(this.state.newItem)
+        this._todoRef.current.value = null
+
     })
 
     render(){
@@ -27,7 +28,7 @@ export class TodoList extends React.Component{
         return(
             <>
             <ul>{this.state.items.map((item) => <li key={[item]}>{item}</li>)}</ul>
-            <input ref={this._todoRef} type={'text'}  onChange={this.userInput}></input>
+            <input ref={this._todoRef} type={'text'} onChange={this.userInput}></input>
             <GeneralButton evento={this.addList} name={'Add something'}/>
             </>
         )
