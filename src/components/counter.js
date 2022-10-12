@@ -1,13 +1,11 @@
 import React from "react";
+import { CounterDisplay } from "./counterDisplay";
 
 export class Counter extends React.Component {
     constructor(props) {
         super(props)
         this.state = {seconds: this.props.start}
     }
-    // userInteraction = ((ev)=>{
-    //     this.setState({seconds: this.state.seconds + this.props.add})
-    // })
     componentDidMount(){
         this._interval = setInterval(()=>{
             this.setState({seconds: this.state.seconds + this.props.add }) 
@@ -23,15 +21,8 @@ export class Counter extends React.Component {
             this.setState({seconds: this.props.start})
         }
     }
+
     render() {
-        return (
-            <>
-                <CounterDisplay state={this.state.seconds}/>
-                {/* <button onClick={this.userInteraction}>Plus</button> */}
-            </>
-        )
+        return <CounterDisplay state={this.state.seconds}/>
     }
-}
-function CounterDisplay(props){
-    return <h1>{props.state}</h1>
 }
