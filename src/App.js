@@ -7,6 +7,7 @@ import { InteractiveWelcome } from './components/interactiveWelcome';
 import { Login } from './components/login';
 import { UncontrolledLogin } from './components/uncontrolledLogin';
 import { Colors } from './components/colors';
+import { TodoList } from './components/toDoList';
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
         <Login onLogin={(x)=>{console.log(x)}} />
         <UncontrolledLogin />
         <Colors colors={['red', 'yellow','green']}/>
+        <TodoList/>
       </div>
     )
   };
