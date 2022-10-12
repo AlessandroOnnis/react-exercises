@@ -1,7 +1,9 @@
-import React from "react";
+import React, { createRef } from 'react';
 import { GeneralButton } from "./generalButton";
 
 export class UncontrolledLogin extends React.Component{
+
+    _formRef = createRef();
 
     formSubmit = (e)=>{
         e.preventDefault()
@@ -19,13 +21,13 @@ export class UncontrolledLogin extends React.Component{
 
     render(){
         return(
-            <form onSubmit={this.formSubmit}>
-                <input name="username"></input>
+            <form ref={this._formRef} onSubmit={this.formSubmit}>
+                <input name="username" autoFocus></input>
                 <input name="password" type='password'></input>
                 <input name="checkbox" type='checkbox'></input>
 
                 <GeneralButton name="login" type="submit"/>
-                <GeneralButton name="reset" type="reset"/>
+                <GeneralButton name="Reset" type="reset"/>
             </form>
         )
     }
