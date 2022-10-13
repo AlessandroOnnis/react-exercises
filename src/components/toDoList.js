@@ -26,7 +26,7 @@ export class TodoList extends React.Component{
 
         return(
             <>
-            <ul>{this.state.items.map((item) => <li key={[item]}>{item}</li>)}</ul>
+            <ul>{this.state.items.map((item, index) => <li key={index}>{item}</li>)}</ul>
             <input ref={this._todoRef} type={'text'}  onChange={this.userInput}></input>
             <GeneralButton evento={this.addList} name={'Add something'}/>
             </>
