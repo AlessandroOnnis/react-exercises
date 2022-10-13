@@ -17,7 +17,7 @@ class App extends React.Component {
         <ClickTracker />
         <InteractiveWelcome />
         <Login onLogin={(x)=>{console.log(x)}} />
-        <UncontrolledLogin />
+        <UncontrolledLogin onLogin={(x)=>{console.log(x)}} />
       </div>
     )
   };
