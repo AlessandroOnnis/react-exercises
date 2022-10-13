@@ -23,10 +23,13 @@ export class TodoList extends React.Component{
     })
 
     clearList = () => {
-        this.setState({
-            items:[]
-        })
-    } 
+        this.setState({items:[]})
+    }
+
+    removeItem = (index) => {
+        this.state.items.splice(index, 1)
+        this.setState({items : this.state.items})
+	}
 
     render(){
 
@@ -38,7 +41,7 @@ export class TodoList extends React.Component{
                 <GeneralButton evento={this.clearList} name={'Clear List'}/>
             </div>
             <input ref={this._todoRef} type={'text'} onChange={this.userInput}></input>
-            <ul>{this.state.items.map((item) => <li key={[item]}>{item}</li>)}</ul>
+            <ul>{this.state.items.map((item, index) => <li key={index}><GeneralButton evento={() =>{this.removeItem(index)}} name={'remove'} key={index}/>{item}</li>)}</ul>
             </>
         )
     }
