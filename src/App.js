@@ -9,6 +9,7 @@ import { UncontrolledLogin } from './components/uncontrolledLogin';
 import { Colors } from './components/colors';
 import { TodoList } from './components/toDoList';
 import { Container } from './components/container';
+import { GeneralButton } from './components/generalButton';
 
 class App extends React.Component {
   render() {
@@ -22,7 +23,15 @@ class App extends React.Component {
         <Login onLogin={(x)=>{console.log(x)}} />
         <UncontrolledLogin onLogin={(x)=>{console.log(x)}} />
         <Colors colors={['red', 'yellow','green']}/>
-        <TodoList/>
+        <TodoList render={ (i, remove)=>{
+            const task = i.map((item, index) => 
+                <li key={index}>
+                    <GeneralButton evento={() =>{remove(index)}} name={'remove'} key={index}/>
+                    {item}
+                </li>)
+            return <ul>{task}</ul>
+            }
+        }/>
       </Container>
     )
   };
