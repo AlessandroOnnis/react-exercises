@@ -33,8 +33,8 @@ export class Login extends React.Component {
     render() {
         return (
             <div>
-                <input name='username' value={this.state.username} onChange={this.info} />
-                <input name='password' type='password' value={this.state.password} onChange={this.info} />
+                <input name='username' placeholder="username" value={this.state.username} onChange={this.info} />
+                <input name='password' placeholder="password" type='password' value={this.state.password} onChange={this.info} />
                 <input name='checkbox' type='checkbox' checked={this.state.checkbox} onChange={this.info} />
                 <GeneralButton name="login" type="button" evento={this.onLogin} disabled={this.state.disabled}/>
                 <GeneralButton name="Reset" type="button" evento={this.onReset} disabled={this.state.disabled}/>

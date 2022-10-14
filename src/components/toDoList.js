@@ -40,7 +40,7 @@ export class TodoList extends React.Component{
                 <GeneralButton evento={this.addList} name={'Add something'}/>
                 <GeneralButton evento={this.clearList} name={'Clear List'}/>
             </div>
-            <input ref={this._todoRef} type={'text'} onChange={this.userInput}></input>
+            <input ref={this._todoRef} type={'text'} onChange={this.userInput} placeholder="Yout next Task"></input>
             <ul>{this.state.items.map((item, index) => <li key={index}><GeneralButton evento={() =>{this.removeItem(index)}} name={'remove'} key={index}/>{item}</li>)}</ul>
             </>
         )

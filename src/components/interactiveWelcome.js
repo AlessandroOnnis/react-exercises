@@ -16,9 +16,9 @@ export class InteractiveWelcome extends React.Component{
     render(){
         return(
             <>
-                <Welcome name={this.state.username} age={20}/>
                 <input name='username' value={this.state.username}
-                onChange={this.printName}/>
+                onChange={this.printName} placeholder={'Type your name'}/>
+                <Welcome name={this.state.username} age={20}/>
             </>
         )
     }
