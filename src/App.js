@@ -8,11 +8,12 @@ import { Login } from './components/login';
 import { UncontrolledLogin } from './components/uncontrolledLogin';
 import { Colors } from './components/colors';
 import { TodoList } from './components/toDoList';
+import { Container } from './components/container';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <Container>
         <Hello />
         <Counter start={0} timing={1000} add={1} />
         <ClickCounter />
@@ -22,7 +23,7 @@ class App extends React.Component {
         <UncontrolledLogin onLogin={(x)=>{console.log(x)}} />
         <Colors colors={['red', 'yellow','green']}/>
         <TodoList/>
-      </div>
+      </Container>
     )
   };
 }
