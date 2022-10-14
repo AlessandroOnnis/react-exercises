@@ -41,10 +41,8 @@ export class TodoList extends React.Component{
                 <GeneralButton evento={this.clearList} name={'Clear List'}/>
             </div>
             <input ref={this._todoRef} type={'text'} onChange={this.userInput} placeholder="Yout next Task"></input>
-            <>{this.props.render(this.state.items, this.removeItem)}</>
+            <>{this.props.children(this.state.items, this.removeItem)}</>
             </>
         )
     }
 }
-
-//funziona ma devo rivederlo, non l'ho capito completamente e mi crea un po' di confusione

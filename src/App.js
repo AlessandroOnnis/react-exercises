@@ -23,7 +23,8 @@ class App extends React.Component {
         <Login onLogin={(x)=>{console.log(x)}} />
         <UncontrolledLogin onLogin={(x)=>{console.log(x)}} />
         <Colors colors={['red', 'yellow','green']}/>
-        <TodoList render={ (i, remove)=>{
+        <TodoList>
+            { (i, remove)=>{
             const task = i.map((item, index) => 
                 <li key={index}>
                     <GeneralButton evento={() =>{remove(index)}} name={'remove'} key={index}/>
@@ -31,7 +32,7 @@ class App extends React.Component {
                 </li>)
             return <ul>{task}</ul>
             }
-        }/>
+        }</TodoList>
       </Container>
     )
   };
