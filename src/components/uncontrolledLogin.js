@@ -5,7 +5,7 @@ export class UncontrolledLogin extends React.Component{
     _formRef = createRef();
 
     infoUpdate = (e) => {
-        e.preventDefault()
+        e.name ==='checkbox' && e.preventDefault()
 
         const username = e.currentTarget.elements.username.value
         const password = e.currentTarget.elements.password.value
@@ -28,7 +28,7 @@ export class UncontrolledLogin extends React.Component{
     render(){
         return(
             <form ref={this._formRef} onChange={this.infoUpdate} onSubmit={this.formSubmit}>
-                <input name="username"></input>
+                <input name="username" autoFocus></input>
                 <input name="password" type='password'></input>
                 <input name="checkbox" type='checkbox'></input>
 
