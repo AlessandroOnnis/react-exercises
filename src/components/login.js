@@ -31,9 +31,7 @@ export class Login extends React.Component {
     }
 
     render() {
-        const buttonLogin = {
-            backgroundColor: this.state.password.length < 8? 'red':'green'
-        }
+        const buttonLogin = {backgroundColor: this.state.password.length < 8? 'red':'green'}
         return (
             <div>
                 <input name='username' placeholder="username" value={this.state.username} onChange={this.info} />

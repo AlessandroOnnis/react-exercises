@@ -13,7 +13,7 @@ import { Container } from './components/container';
 class App extends React.Component {
   render() {
     return (
-      <Container>
+      <Container title="Random title in a random App">
         <Hello />
         <Counter start={0} timing={1000} add={1} />
         <ClickCounter />
