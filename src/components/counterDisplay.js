@@ -2,6 +2,6 @@ import React from "react";
 
 export class CounterDisplay extends React.Component {
     render() {
-        return <h1>{this.props.state}</h1>
+        return <h1 style={this.props.style}>{this.props.state}</h1>
     }
 }

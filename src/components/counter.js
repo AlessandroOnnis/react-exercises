@@ -23,6 +23,11 @@ export class Counter extends React.Component {
     }
 
     render() {
-        return <CounterDisplay state={this.state.seconds}/>
+        const display ={
+            color: this.state.seconds <= 5?'green':this.state.seconds <=8?'orange':'red',
+            padding: 15,
+            width: 30
+        }
+        return <CounterDisplay style={display} state={this.state.seconds}/>
     }
 }
