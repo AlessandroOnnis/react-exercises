@@ -10,6 +10,7 @@ import { Colors } from './components/colors';
 import { TodoList } from './components/toDoList';
 import { Container } from './components/container';
 import { GeneralButton } from './components/generalButton';
+import { Sum } from './components/sum';
 
 class App extends React.Component {
     render() {
@@ -33,6 +34,7 @@ class App extends React.Component {
                         return <ul>{task}</ul>
                     }
                 }</TodoList>
+                <Sum numbers={[12, 24,38]}/>
             </Container>
         )
     };
