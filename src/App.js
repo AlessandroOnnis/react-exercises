@@ -34,7 +34,7 @@ class App extends React.Component {
                         return <ul>{task}</ul>
                     }
                 }</TodoList>
-                <Sum numbers={[12, 24,38]}/>
+                <Sum />
             </Container>
         )
     };
