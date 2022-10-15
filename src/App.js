@@ -12,29 +12,29 @@ import { Container } from './components/container';
 import { GeneralButton } from './components/generalButton';
 
 class App extends React.Component {
-  render() {
-    return (
-      <Container title="Random title in a random App">
-        <Hello />
-        <Counter start={0} timing={1000} add={1} />
-        <ClickCounter />
-        <ClickTracker />
-        <InteractiveWelcome />
-        <Login onLogin={(x)=>{console.log(x)}} />
-        <UncontrolledLogin onLogin={(x)=>{console.log(x)}} />
-        <Colors colors={['red', 'yellow','green']}/>
-        <TodoList>
-            { (i, remove)=>{
-            const task = i.map((item, index) => 
-                <li key={index}>
-                    <GeneralButton evento={() =>{remove(index)}} name={'remove'} key={index}/>
-                    {item}
-                </li>)
-            return <ul>{task}</ul>
-            }
-        }</TodoList>
-      </Container>
-    )
-  };
+    render() {
+        return (
+            <Container title="Random title in a random App">
+                <Hello />
+                <Counter start={0} timing={1000} add={1} />
+                <ClickCounter />
+                <ClickTracker />
+                <InteractiveWelcome />
+                <Login onLogin={(x) => { console.log(x) }} />
+                <UncontrolledLogin onLogin={(x) => { console.log(x) }} />
+                <Colors colors={['red', 'yellow', 'green']} />
+                <TodoList>{
+                    (i, remove) => {
+                        const task = i.map((item, index) =>
+                            <li key={index}>
+                                <GeneralButton evento={() => { remove(index) }} name={'remove'} key={index} />
+                                {item}
+                            </li>)
+                        return <ul>{task}</ul>
+                    }
+                }</TodoList>
+            </Container>
+        )
+    };
 }
 export default App;
