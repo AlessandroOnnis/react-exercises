@@ -1,21 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { GeneralButton } from "./generalButton";
 
-export class ClickCounter extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {amount: 0}
-    }
-    userInteraction = (()=>{
-        this.setState({amount: this.state.amount + 1})
-    })
+export function ClickCounter({startAmount = 0}){
+    const [amount, setAmount] = useState(startAmount)
 
-    render() {
-        return (
-            <div>
-                <h2>Count : {this.state.amount}</h2>
-                <GeneralButton name="plus" evento={this.userInteraction}/>
-            </div>
-        );
+    function userInteraction(){
+        setAmount(amount => amount +1 )
     }
+    
+    return(
+        <div>
+            <h2>Count : {amount}</h2>
+            <GeneralButton name="plus" evento={userInteraction}/>
+        </div>
+    )
 }
