@@ -24,16 +24,14 @@ class App extends React.Component {
                 <Login onLogin={(x) => { console.log(x) }} />
                 <UncontrolledLogin onLogin={(x) => { console.log(x) }} />
                 <Colors colors={['red', 'yellow', 'green']} />
-                <TodoList>{
-                    (i, remove) => {
-                        const task = i.map((item, index) =>
-                            <li key={index}>
-                                <GeneralButton evento={() => { remove(index) }} name={'remove'} key={index} />
-                                {item}
-                            </li>)
-                        return <ul>{task}</ul>
-                    }
-                }</TodoList>
+                <TodoList>{(i, remove) => {
+                    const task = i.map((item, index) =>
+                        <li key={index}>
+                            <GeneralButton evento={() => { remove(index) }} name={'remove'} key={index} />
+                            {item}
+                        </li>)
+                    return <ul>{task}</ul>}}
+                </TodoList>
                 <Sum />
             </Container>
         )

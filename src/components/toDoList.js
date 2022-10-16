@@ -1,48 +1,43 @@
-import React, { createRef } from "react";
+import React, { useState, createRef } from "react";
 import { GeneralButton } from "./generalButton";
 
-export class TodoList extends React.Component{
-    _todoRef = createRef()
+const _todoRef = createRef()
 
-    constructor(props){
-        super(props)
-        this.state = {items:['myTask1', 'myTask2', 'myTask3', 'myTask4']}
-    }
-    userInput = () =>{
-        this.setState({
-            newItem: this._todoRef.current.value,
-        })
-    }
-
-    addList = (() => {
-        const userInput = this._todoRef.current.value
-        if(userInput === '')return
-        this.setState({newItem: userInput})
-        this.state.items.push(this.state.newItem)
-        this._todoRef.current.value = null
+export function TodoList(props){
+    const [task, setTask] = useState({
+        items:['myTask1', 'myTask2', 'myTask3', 'myTask4']
     })
 
-    clearList = () => {
-        this.setState({items:[]})
+    function userInput(e){
+        setTask({...task, newItem: e.current})
     }
 
-    removeItem = (index) => {
-        this.state.items.splice(index, 1)
-        this.setState({items : this.state.items})
+    function addList(){
+        // const newItem = 
+        if(_todoRef.current.value === '')return
+        setTask({...task, newItem: _todoRef.current.value})
+        task.items.push(_todoRef.current.value)
+        _todoRef.current.value = null  //perché se qui piazzo newItem = null si rompe?
+    }
+
+    function clearList(){
+        setTask((task) => {return{...task, items:[]}})
+    }
+
+    function removeItem(index){
+        task.items.splice(index, 1)
+        setTask({...task,items: task.items})
 	}
 
-    render(){
-
-        return(
-            <>
+    return(
+        <>
             <div>
                 <h3>Your todo list</h3>
-                <GeneralButton evento={this.addList} name={'Add something'}/>
-                <GeneralButton evento={this.clearList} name={'Clear List'}/>
+                <GeneralButton evento={addList} name={'Add something'} />
+                <GeneralButton evento={clearList} name={'Clear List'}/>
             </div>
-            <input ref={this._todoRef} type={'text'} onChange={this.userInput} placeholder="Yout next Task"></input>
-            <>{this.props.children(this.state.items, this.removeItem)}</>
-            </>
-        )
-    }
+            <input ref={_todoRef} type={'text'} onChange={userInput} placeholder="Yout next Task"></input>
+            <>{props.children(task.items, removeItem)}</>
+        </>
+    )
 }
