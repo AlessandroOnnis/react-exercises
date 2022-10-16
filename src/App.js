@@ -18,7 +18,7 @@ class App extends React.Component {
             <Container title="Random title in a random App">
                 <Hello />
                 <Counter start={0} timing={1000} add={1} />
-                <ClickCounter />
+                <ClickCounter onCounterChange={(c=> console.log(c))}/>
                 <ClickTracker />
                 <InteractiveWelcome />
                 <Login onLogin={(x) => { console.log(x) }} />
