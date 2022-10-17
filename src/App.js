@@ -11,6 +11,7 @@ import { TodoList } from './components/toDoList';
 import { Container } from './components/container';
 import { GeneralButton } from './components/generalButton';
 import { Sum } from './components/sum';
+import { GithubUser } from './components/gitHubUser';
 
 class App extends React.Component {
     render() {
@@ -32,6 +33,7 @@ class App extends React.Component {
                         </li>)
                     return <ul>{task}</ul>}}
                 </TodoList>
+                <GithubUser username={'alessandroonnis'}/>
                 <Sum />
             </Container>
         )
