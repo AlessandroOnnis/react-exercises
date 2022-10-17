@@ -13,11 +13,10 @@ export function TodoList(props){
     }
 
     function addList(){
-        // const newItem = 
         if(_todoRef.current.value === '')return
         setTask({...task, newItem: _todoRef.current.value})
         task.items.push(_todoRef.current.value)
-        _todoRef.current.value = null  //perché se qui piazzo newItem = null si rompe?
+        _todoRef.current.value = null
     }
 
     function clearList(){

@@ -15,7 +15,7 @@ export function Login(){
                 ...userData,
                 [name]: type === 'checkbox'?checked: value
             }
-        })
+        }, [userData])
     }
     function onLogin(){
         setUserData((userData) => {return {...userData}})
