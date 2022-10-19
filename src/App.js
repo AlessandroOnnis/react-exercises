@@ -12,6 +12,7 @@ import { Container } from './components/container';
 import { GeneralButton } from './components/generalButton';
 import { Sum } from './components/sum';
 import { GithubUser } from './components/gitHubUser';
+import { GithubUserList } from './components/GithubUserList';
 
 class App extends React.Component {
     render() {
@@ -31,12 +32,25 @@ class App extends React.Component {
                             <GeneralButton evento={() => { remove(index) }} name={'remove'} key={index} />
                             {item}
                         </li>)
-                    return <ul>{task}</ul>}}
+                    return task &&<ul>{task}</ul>}}
                 </TodoList>
-                <GithubUser username={'alessandroonnis'}/>
+                <GithubUserList/>
                 <Sum />
             </Container>
         )
     };
 }
 export default App;
+
+
+//se si cicla esternamente
+
+{/* <GithubUserList>
+ {(i, remove) => {
+const list = i.map((item, index) =>
+    <li className='githubItems' key={index}>
+        <GeneralButton className="buttonX" evento={() => { remove(index) }} name={'x'} key={index} />
+        <GithubUser username={item}/>
+    </li>)
+return list?<ul className="githubList">{list}</ul>:''}} 
+</GithubUserList> */}

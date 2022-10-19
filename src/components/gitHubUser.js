@@ -11,10 +11,15 @@ export function GithubUser ({username}){
         }, [username])
     return (
         userData?
-        <div>
-            {<h3>The current user is {userData.name}</h3>}
-            {<p>Location: {userData.location}</p>}
-            {<p>Direct url: {userData.html_url}</p>}
+        <div className="layoutGit">
+            <div>
+                <img src={userData.avatar_url}/>
+            </div>
+            <div>
+                <h3 className="info">The current user is {userData.name}</h3>
+                <p className="info">Location: {userData.location}</p>
+                <p className="info">Direct url: {userData.html_url}</p>
+            </div>
         </div>
         :'there is nothing to see'
     )

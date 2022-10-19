@@ -6,7 +6,7 @@ export function Container(props) {
             <div className="container-title">{props.title}</div>
             <hr/>
             <LanguageSelect/>
-            <div>{props.children}</div>
+            <div className="all">{props.children}</div>
         </div>
     )
 }
