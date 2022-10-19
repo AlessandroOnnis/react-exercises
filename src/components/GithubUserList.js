@@ -9,8 +9,6 @@ export function GithubUserList (props){
         user:[]
     })
 
-    //non sapevo in che altro modo usare lo useEffect visto che il fetch avviene su gitHubUser
-
     useEffect(()=>{
         if(userList) {return (m) => console.log('mounted')}
     }, [])
@@ -55,20 +53,3 @@ export function GithubUserList (props){
         </div>
     )
 }
-
-//se il ciclo si fa su app
-
-//     return (
-//         <div>
-//             <div className="github">
-//                 <h1>Github Users</h1>
-//                 <input ref={_userRef} type={'text'} onChange={searchUser} placeholder="Search User"></input>
-//                 <div>   
-//                     <GeneralButton className="button" evento={addUser} name={'Add result'}/>
-//                     <GeneralButton className="button" evento={clearList} name={'Clear List'}/>
-//                 </div>
-//             </div>
-//             <div>{props.children(userList.user, removeItem)}</div>
-//         </div>
-//     )
-// }

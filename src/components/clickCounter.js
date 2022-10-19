@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from "react";
 import { GeneralButton } from "./generalButton";
+import { useCounter } from "./useCounter";
 
-export function ClickCounter(props, {startAmount = 0}){
-    const [amount, setAmount] = useState(startAmount)
-
-    useEffect(()=>{
-        props.onCounterChange(amount)
-    },[amount, props])
-
-    function userInteraction(){
-        setAmount(amount => amount +1 )
-    }
-    
+export function ClickCounter({startAmount = 0}){
+    const {amount, increment, decrement, reset} = useCounter(startAmount)
     return(
-        <div>
-            <h2>Count : {amount}</h2>
-            <GeneralButton name="plus" evento={userInteraction}/>
+        <div className="clickCounter">
+            <div className="clicksCounter">
+                <GeneralButton className="buttonO" name="-" evento={decrement}/>
+                <h2>Count : {amount}</h2>
+                <GeneralButton className="buttonO" name="+" evento={increment}/>
+            </div>
+            <div>
+                <GeneralButton className="buttonR" name="Reset Count" evento={reset}/>
+            </div>
         </div>
     )
 }
