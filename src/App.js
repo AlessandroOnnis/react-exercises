@@ -12,6 +12,7 @@ import { Container } from './components/container';
 import { GeneralButton } from './components/generalButton';
 import { Sum } from './components/sum';
 import { GithubUserList } from './components/GithubUserList';
+import { FormControlledTracked } from './components/formControlledTracked';
 
 class App extends React.Component {
     render() {
@@ -35,6 +36,7 @@ class App extends React.Component {
                 </TodoList>
                 <GithubUserList/>
                 <Sum />
+                <FormControlledTracked/>
             </Container>
         )
     };
