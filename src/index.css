@@ -157,3 +157,7 @@ body{
     border: 0.2px solid rgba(255, 49, 49, 0.373);
     color: white;
 }
+.error{
+    color: red;
+    margin: auto;
+}

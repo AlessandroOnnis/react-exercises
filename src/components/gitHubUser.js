@@ -20,6 +20,6 @@ export function GithubUser ({username}){
                 <p className="info">Direct url: {userData.html_url}</p>
             </div>
         </div>
-        :'there is nothing to see'
+        :<div className="error">Retry, something is gone wrong</div>
     )
 }
