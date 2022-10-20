@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export function useCounter(startAmount = 0){
     const [amount, setAmount] = useState(startAmount)
 
-    function incremented(){
+    const incremented = useCallback(function incremented(){
         setAmount(amount => amount +1)
-    }
-    function decremented(){
+    }, [])
+    const decremented = useCallback(function decremented(){
         setAmount(amount => amount -1)
-    }
-    function reset(){
+    }, [])
+    const reset = useCallback(function reset(){
         setAmount(amount => amount *0)
-    }
+    }, [startAmount])
 
     return{
         amount: amount,
