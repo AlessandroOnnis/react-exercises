@@ -8,8 +8,6 @@ export function CarDetails(){
         setCarData(carData)
         console.log('started')
     },[])
-    // Perché se scritta così mi dice di impostare tutto come defaultValue?ora è diventato un placeholder
-    //i valori entrano correttamente per cui 
     
 	function typing() { 
 		setCarData((carData)=>{
@@ -22,15 +20,6 @@ export function CarDetails(){
         })
 	}
 
-	// function typing() {
-	// 	const newCar = {
-	// 		model: inputRef.current.elements.model.value,
-	// 		year: inputRef.current.elements.year.value,
-	// 		color: inputRef.current.elements.color.value
-	// 	};
-	// 	setCarData(newCar);
-	// }
-    
     return(
         <div className="anotherForm">
         <form className="carForm" ref={inputRef} onChange={typing}>
