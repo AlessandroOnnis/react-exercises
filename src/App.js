@@ -14,6 +14,8 @@ import { Sum } from './components/sum';
 import { GithubUserList } from './components/GithubUserList';
 import { FormControlledTracked } from './components/formControlledTracked';
 import { CarDetails } from './components/carDetails';
+import { FilteredList } from './components/filteredList';
+import { studenti } from './components/listaStudenti';
 
 class App extends React.Component {
     render() {
@@ -39,6 +41,7 @@ class App extends React.Component {
                 <FormControlledTracked/>
                 <CarDetails/>
                 <Sum />
+                <FilteredList persone={studenti}/>
             </Container>
         )
     };
