@@ -161,3 +161,27 @@ body{
     color: red;
     margin: auto;
 }
+.anotherForm{
+    display: flex;
+    justify-content: center;
+}
+.carForm{
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid azure;
+    background-color: rgba(0, 145, 255, 0.478);
+    padding: 15px;
+}
+.carField{
+    display: flex;
+    margin-top: 3px;
+    justify-content: space-between;
+    width: 250px;
+}
+.sum{
+    padding: 5px;
+    border-top: 1px solid black;
+    border-radius: 2px;
+    font-size: 1rem;
+    text-align: center;
+}

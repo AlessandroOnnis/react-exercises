@@ -13,6 +13,7 @@ import { GeneralButton } from './components/generalButton';
 import { Sum } from './components/sum';
 import { GithubUserList } from './components/GithubUserList';
 import { FormControlledTracked } from './components/formControlledTracked';
+import { CarDetails } from './components/carDetails';
 
 class App extends React.Component {
     render() {
@@ -35,8 +36,9 @@ class App extends React.Component {
                     return task &&<ul>{task}</ul>}}
                 </TodoList>
                 <GithubUserList/>
-                <Sum />
                 <FormControlledTracked/>
+                <CarDetails/>
+                <Sum />
             </Container>
         )
     };
