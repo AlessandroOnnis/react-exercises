@@ -28,7 +28,7 @@ export class UncontrolledLogin extends React.Component{
     render(){
         return(
             <form ref={this._formRef} onChange={this.infoUpdate} onSubmit={this.formSubmit}>
-                <input name="username" placeholder='username' autoFocus></input>
+                <input name="username" placeholder='username'></input>
                 <input name="password" placeholder='password' type='password'></input>
                 <input name="checkbox" type='checkbox'></input>
 

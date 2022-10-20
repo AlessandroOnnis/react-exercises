@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { GeneralButton } from "./generalButton";
 
 export function Login(){
@@ -8,6 +8,12 @@ export function Login(){
         checkbox: false,
         disabled: true
     })
+    const userRef = useRef()
+
+    useEffect(()=>{
+        userRef.current.focus()
+    },[])
+
     function info(e){
         const {name, value, type, checked} = e.target
         setUserData(userData=>{
@@ -36,7 +42,7 @@ export function Login(){
     return (
                 
         <div>
-            <input name='username' onChange={info} type='username' value={userData.username} placeholder="username"/>
+            <input ref={userRef} name='username' onChange={info} type='username' value={userData.username} placeholder="username"/>
             <input name='password' onChange={info} type='password' value={userData.password} placeholder="password"/>
             <input name='checkbox' onChange={info} type='checkbox' checked={userData.checkbox}/>
             <GeneralButton name="login" type="button" evento={onLogin} disabled={!userData.username || !userData.password} style={buttonLogin}/>
