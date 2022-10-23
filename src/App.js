@@ -33,14 +33,14 @@ export function App() {
                 <Route path="users" element={<GithubUserList />}>
                     <Route index 
                     element={
-                        <h2 style={{width: 180, height: 120, padding:25, color: 'white', background:'green', textAlign:'center', borderRadius: '15px', position:'relative', left: -200, alignSelf:'center'}}>
+                        <h2 style={{width: '90%', height: 120, padding:25, color: 'green', textAlign:'center', border:'1px solid green', borderRadius: '15px', alignSelf:'center'}}>
                             <div>Add a user</div>
                             <div>&</div>
                             <div>select it</div>
                         </h2>}/>
                     <Route path=":username" element={<ShowGithubUser/>}/>
                 </Route>
-                <Route path="*" element={// la pagina users non esiste ho testato su quella
+                <Route path="*" element={
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>Page not found
                         <Link to={'/'}>
                             <div style={navigation2}>Go back to Welcome</div>
