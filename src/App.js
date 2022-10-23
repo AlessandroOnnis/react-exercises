@@ -31,6 +31,13 @@ export function App() {
                 <Route path="/" element={<Welcome name={'Alfio'} />} />
                 <Route path="counter" element={<ClickCounter />} />
                 <Route path="users" element={<GithubUserList />}>
+                    <Route index 
+                    element={
+                        <h2 style={{width: 180, height: 120, padding:25, color: 'white', background:'green', textAlign:'center', borderRadius: '15px', position:'relative', left: -200, alignSelf:'center'}}>
+                            <div>Add a user</div>
+                            <div>&</div>
+                            <div>select it</div>
+                        </h2>}/>
                     <Route path=":username" element={<ShowGithubUser/>}/>
                 </Route>
                 <Route path="*" element={// la pagina users non esiste ho testato su quella
