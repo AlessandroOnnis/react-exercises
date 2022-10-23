@@ -2,6 +2,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { Welcome } from './components/welcome'
 import { ClickCounter } from './components/clickCounter'
 import { ShowGithubUser } from './components/ShowGithubUser'
+import { GithubUserList } from './components/GithubUserList'
 
 export function App() {
 
@@ -24,12 +25,14 @@ export function App() {
             <div style={{ display: 'flex', justifyContent: 'center', padding: 10, margin: 5, gap: 10 }}>
                 <Link style={navigation} to={'/'}>Welcome</Link>
                 <Link style={navigation} to={'counter'}>ClickCounter</Link>
-                <Link style={navigation} to={'users/ddd'}>GithubUser</Link>
+                <Link style={navigation} to={'users'}>GithubUser</Link>
             </div>
             <Routes>
                 <Route path="/" element={<Welcome name={'Alfio'} />} />
                 <Route path="counter" element={<ClickCounter />} />
-                <Route path="users/:username" element={<ShowGithubUser />} />
+                <Route path="users" element={<GithubUserList />}>
+                    <Route path=":username" element={<ShowGithubUser/>}/>
+                </Route>
                 <Route path="*" element={// la pagina users non esiste ho testato su quella
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>Page not found
                         <Link to={'/'}>
