@@ -1,10 +1,8 @@
 // import { useState} from "react"
-import useSWR, {mutate} from "swr"
-
-const fetchUser = (url) => fetch(url).then((response) => response.json())
+import useSWR from "swr"
 
 export function useGithubUser(username){
-    const {data, error} = useSWR( username !== null && `https://api.github.com/users/${username}`, fetchUser)
+    const {data, error, mutate} = useSWR( username !== null && `https://api.github.com/users/${username}`)
 
     function refresh(){
         mutate()
