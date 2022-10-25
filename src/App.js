@@ -29,11 +29,11 @@ export function App() {
             </div>
             <Routes>
                 <Route path="/" element={<Welcome name={'Alfio'} />} />
-                <Route path="counter" element={<ClickCounter />} />
-                <Route path="users" element={<GithubUserList />}>
+                <Route path="/counter" element={<ClickCounter />} />
+                <Route path="/users" element={<GithubUserList />}>
                     <Route index 
                     element={
-                        <h2 style={{width: '90%', height: 120, padding:25, color: 'green', textAlign:'center', border:'1px solid green', borderRadius: '15px', alignSelf:'center'}}>
+                        <h2 style={{width: '100%', height: 120, padding:25, color: 'green', textAlign:'center', border:'1px solid green', borderRadius: '15px', alignSelf:'center'}}>
                             <div>Add a user</div>
                             <div>&</div>
                             <div>select it</div>

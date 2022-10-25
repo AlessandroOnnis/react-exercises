@@ -1,25 +1,18 @@
-import { useState} from "react"
+// import { useState} from "react"
+import useSWR from "swr"
 
-export function useGithubUser({username}){
-    const [userData, setUser] = useState(null)
+const fetchUser = (url) => fetch(url).then((response) => response.json())
 
-    async function fetchUser(username){
-        try {
-            const response = await fetch(`https://api.github.com/users/${username}`)
-            const json = await response.json()
-            if(response.status !== 200){
-                throw new Error('the fetch it\'s gone wrong!')
-            }
-            setUser(json)
-        } catch (error) {
-            return error
-        }
-        
-    }
+export function useGithubUser(username){
+    const {data, error} = useSWR(`https://api.github.com/users/${username}`, fetchUser)
+
     return{
-        userData,
-        fetchUser
+        data,
+        loading: !data && !error,
+        error,
     }
 }
 
-//sto esercizio mi ha fatto sudare, destrutturavo userData qui e mi dava un 403
+//ho perso due ore a capire perché non funzionasse, ho controllato tutti i componenti che interagivano con lo username,
+//ho provato a destrutturare, a correggere parentesi a destra e manca, controllare in console che dati arrivassero,
+//e nulla, dopo due ore ho imparato che data è una parola obbligatoria nell'swr, avevo userData dal precedente esercizio e non printava
