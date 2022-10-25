@@ -1,7 +1,8 @@
+import { GeneralButton } from "./generalButton"
 import { useGithubUser } from "./useGithubUser"
 
 export function GithubUser ({username}){
-    const {data, loading, error} = useGithubUser(username)
+    const {data, loading, error, refresh} = useGithubUser(username)
     
     return (
         <div>
@@ -16,6 +17,7 @@ export function GithubUser ({username}){
                             <p className="info">Location: {data.location}</p>
                             <p className="info">Direct url: {data.html_url}</p>
                         </div>
+                        <GeneralButton style={{border: '1px solid black', background:'blue', color:'white', borderRadius: 3, padding:15}} name={'Refresh'} evento={refresh}/>
                     </div>
                     }
         </div>
